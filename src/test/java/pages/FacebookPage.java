@@ -6,6 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
 public class FacebookPage {
+
     public FacebookPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
@@ -24,4 +25,7 @@ public class FacebookPage {
 
     @FindBy(xpath="//button[@id='u_0_m_eS']")
     public WebElement cookiesKabulEt;
+
+    @FindBy(xpath ="//button[@class='_42ft _4jy0 _9xo7 _4jy3 _4jy1 selected _51sy']")
+    public WebElement cookieButonu;
 }
