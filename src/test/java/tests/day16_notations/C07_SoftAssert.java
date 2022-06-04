@@ -10,6 +10,7 @@ import utilities.TestBase;
 import java.util.List;
 
 public class C07_SoftAssert extends TestBase {
+
     @Test
     public void test01() {
         // 1. “http://zero.webappsecurity.com/” Adresine gidin
@@ -17,10 +18,10 @@ public class C07_SoftAssert extends TestBase {
         // 2. Sign in butonuna basin
         driver.findElement(By.id("signin_button")).click();
         // 3. Login kutusuna “username” yazin
-        WebElement loginKutusu = driver.findElement(By.xpath("//input[@name='user_login']"));
+        WebElement loginKutusu= driver.findElement(By.xpath("//input[@name='user_login']"));
         loginKutusu.sendKeys("username");
         // 4. Password kutusuna “password” yazin
-        WebElement passKutusu = driver.findElement(By.xpath("//input[@id='user_password']"));
+        WebElement passKutusu= driver.findElement(By.xpath("//input[@id='user_password']"));
         passKutusu.sendKeys("password");
         // 5. Sign in tusuna basin
         driver.findElement(By.xpath("//input[@name='submit']")).click();
@@ -31,18 +32,19 @@ public class C07_SoftAssert extends TestBase {
         // 7. “Purchase Foreign Currency” tusuna basin
         driver.findElement(By.xpath("//*[text()='Purchase Foreign Currency']")).click();
         // 8. “Currency” drop down menusunden Eurozone’u secin
-        WebElement ddo = driver.findElement(By.xpath("//select[@name='currency']"));
-        Select select = new Select(ddo);
+        WebElement ddo=driver.findElement(By.xpath("//select[@name='currency']"));
+        Select select=new Select(ddo);
         select.selectByVisibleText("Eurozone (euro)");
+
         // 9. soft assert kullanarak "Eurozone (Euro)" secildigini test edin
-        SoftAssert softAssert = new SoftAssert();
-        String secilenOption = select.getFirstSelectedOption().getText();
-        String expectedOption = "Eurozone (Euro)";
-        softAssert.assertEquals(secilenOption, expectedOption, "secilen option uygun degil");
+        SoftAssert softAssert=new SoftAssert();
+        String secilenOption= select.getFirstSelectedOption().getText();
+        String expectedOption="Eurozone (Euro)";
+        softAssert.assertEquals(secilenOption,expectedOption,"secilen option uygun degil");
         // 10. soft assert kullanarak DropDown listesinin su secenekleri oldugunu test edin "Select One", "Australia (dollar)", "Canada (dollar)","Switzerland (franc)","China (yuan)","Denmark (krone)","Eurozone (euro)","Great Britain (pound)","Hong Kong (dollar)","Japan (yen)","Mexico (peso)","Norway (krone)","New Zealand (dollar)","Sweden (krona)","Singapore (dollar)","Thailand (baht)"
-        List<WebElement> optionList = select.getOptions();
+        List<WebElement> optionList= select.getOptions();
+
 
 
     }
 }
-

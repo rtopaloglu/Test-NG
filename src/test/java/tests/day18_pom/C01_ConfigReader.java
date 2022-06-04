@@ -7,10 +7,10 @@ import utilities.Driver;
 public class C01_ConfigReader {
 
     @Test
-    public void test01(){
+    public void test01() {
 
         Driver.getDriver().get(ConfigReader.getProperty("amazonUrl"));
         Driver.getDriver().get(ConfigReader.getProperty("facebookUrl"));
+        Driver.closeDriver();
     }
-
 }

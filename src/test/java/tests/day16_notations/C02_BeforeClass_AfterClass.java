@@ -16,16 +16,17 @@ public class C02_BeforeClass_AfterClass extends TestBase {
      grup, test veya sut'den once ve sonra calisirlar
      ileride xml dosyalari ile birlikte bunu gorecegiz
      */
+
+
     @BeforeClass
-    public void beforeClassMethod() {
+    public void beforeClassMethod(){
         System.out.println("Before Class");
     }
 
     @AfterClass
-    public void afterClassMethod() {
+    public void afterClassMethod(){
         System.out.println("After Class");
     }
-
     @Test
     public void amazonTesti() {
         driver.get("https://www.amazon.com");
@@ -37,6 +38,7 @@ public class C02_BeforeClass_AfterClass extends TestBase {
         driver.get("https://www.bestbuy.com");
         System.out.println(driver.getCurrentUrl());
     }
+
 
     @Test
     public void techproedTesti() {

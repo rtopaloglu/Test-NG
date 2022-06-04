@@ -7,8 +7,8 @@ import utilities.Driver;
 
 public class FacebookPage {
 
-    public FacebookPage() {
-        PageFactory.initElements(Driver.getDriver(), this);
+    public FacebookPage(){
+        PageFactory.initElements(Driver.getDriver(),this);
     }
 
     @FindBy(id = "email")

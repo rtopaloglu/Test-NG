@@ -8,9 +8,11 @@ import utilities.ConfigReader;
 import utilities.Driver;
 
 public class C02_ConfigReaderKullanimi {
+
     @Test
     public void test01() {
-        FacebookPage facebookPage = new FacebookPage();
+        FacebookPage facebookPage=new FacebookPage();
+
         // facebook anasayfaya gidin
         Driver.getDriver().get(ConfigReader.getProperty("facebookUrl"));
         // cikarsa cookies kabul edin
